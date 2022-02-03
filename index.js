@@ -293,11 +293,11 @@ const miscVocab = [
 /* 	{ hangul: '좀처럼', romaji: 'jomcheoreom', def: 'seldom' },
 	{ hangul: '드물게', romaji: 'deumulge', def: 'rarely' }, */
 	{ hangul: '절대', romaji: 'jeoldae', def: 'never' },
-	{ hangul: '만나서 반가워요', romaji: 'Mannaseo bangawoeyo', def: 'Nice to meet you' },
-	{ hangul: '어떻게 지내세요?', romaji: 'Eotteoke jinaeseyo? ', def: 'How are you?' },
-	{ hangul: '잘 지내요 ', romaji: 'Jal jinaeyo', def: "I'm great" },
-	{ hangul: '저는 커피를 마시어요', romaji: 'naneun keopileul masieoyo', def: 'I drink coffee' },
-	{ hangul: '나는 여기에 자주 오요', romaji: 'naneun yeogie jaju oyo', def: 'I come here often' }
+	{ hangul: '만나서 반가워요', romaji: 'Mannaseo bangawoeyo', def: 'nice to meet you' },
+	{ hangul: '어떻게 지내세요?', romaji: 'Eotteoke jinaeseyo? ', def: 'how are you?' },
+	{ hangul: '잘 지내요 ', romaji: 'Jal jinaeyo', def: "im great" },
+	{ hangul: '저는 커피를 마시어요', romaji: 'naneun keopileul masieoyo', def: 'i drink coffee' },
+	{ hangul: '나는 여기에 자주 오요', romaji: 'naneun yeogie jaju oyo', def: 'i come here often' }
 ]
 
 const vocab = [...primaryVocab,...nounVocab,...miscVocab]
@@ -314,15 +314,26 @@ const MODE_TYPES = {
 let curIndex = randomInteger(0, vocab.length - 1);
 let mode = MODE_TYPES.ASK_KOREAN;
 let allAnswered = false;
+let showRomaji = true;
 
 function sortVocab() {
 	vocab.sort(() => Math.random() - 0.5);
 }
 
+function changeShowRomaji() {
+	showRomaji = !showRomaji;
+	document.getElementById('romajichanger').innerHTML = showRomaji ? 'Hide Romaji' : 'Show Romaji'
+	getQuestion();
+}
+
 function changeMode() {
 	if (mode.value === MODE_TYPES.ASK_ENGLISH.value) {
+		// switch to korean
+		document.getElementById('romajichanger').style.display = 'block';
 		mode = MODE_TYPES.ASK_KOREAN;
 	} else {
+		// switch to ask english
+		document.getElementById('romajichanger').style.display = 'none';
 		mode = MODE_TYPES.ASK_ENGLISH;
 	}
 	document.getElementById('mode').innerHTML = 'Mode: ' + mode.text;
@@ -332,7 +343,7 @@ function changeMode() {
 
 function getQuestion() {
 	if (mode.value === MODE_TYPES.ASK_KOREAN.value) {
-		document.getElementById('question').innerHTML = `What does ${vocab[curIndex]['romaji']} (${vocab[curIndex]['hangul']}) mean?`;
+		document.getElementById('question').innerHTML = `What does ${showRomaji ? vocab[curIndex]['romaji'] : ''} (${vocab[curIndex]['hangul']}) mean?`;
 	} else if (mode.value === MODE_TYPES.ASK_ENGLISH.value) {
 		document.getElementById('question').innerHTML = `How do you say ${vocab[curIndex]['def']} in Romaji?`;
 	} else {
@@ -358,7 +369,7 @@ function processAskKorean(userInput) {
 
 	document.getElementById(
 		'result'
-	).innerHTML = `Previous Result: ${statement} ${vocab[curIndex]['romaji']} (${vocab[curIndex]['hangul']}) means ${vocab[curIndex]['def']}`;
+	).innerHTML = `Previous Result: ${statement} ${showRomaji ? vocab[curIndex]['romaji'] : ''} (${vocab[curIndex]['hangul']}) means ${vocab[curIndex]['def']}`;
 
 	return result;
 }
@@ -394,6 +405,6 @@ document.getElementById('myText').addEventListener('keypress', function (e) {
 });
 
 document.getElementById('modechanger').onclick = changeMode;
-
+document.getElementById('romajichanger').onclick = changeShowRomaji;
 sortVocab();
 getQuestion();
