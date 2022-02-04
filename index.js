@@ -14,10 +14,15 @@ const primaryVocab = [
 		romaji: 'oda',
 		def: 'to come'
 	},
-	{
+/* 	{
 		hangul: '있다',
 		romaji: 'itda',
-		def: 'to have'
+		def: 'to exist'
+	}, */
+	{
+		hangul: '가지다',
+		romaji: 'gajida',
+		def: 'to have (gets shortended to gajda when combined with sipda)'
 	},
 	{
 		hangul: '이다',
@@ -44,7 +49,7 @@ const primaryVocab = [
 		romaji: 'boda',
 		def: 'to see'
 	},
-	{
+/* 	{
 		hangul: '자다',
 		romaji: 'jada',
 		def: 'to sleep'
@@ -53,13 +58,13 @@ const primaryVocab = [
 		hangul: '일어나다',
 		romaji: 'ireonada',
 		def: 'to wake up or get up'
-	},
+	}, */
 /* 	{
 		hangul: '쓰다',
 		romaji: 'sseuda',
 		def: 'to write or to use'
 	}, */
-	{
+/* 	{
 		hangul: '웃다',
 		romaji: 'utda',
 		def: 'to laugh'
@@ -88,7 +93,7 @@ const primaryVocab = [
 		hangul: '배우다',
 		romaji: 'baeuda',
 		def: 'to learn'
-	},
+	}, */
 	{
 		hangul: '만나다',
 		romaji: 'mannada',
@@ -99,11 +104,11 @@ const primaryVocab = [
 		romaji: 'jota',
 		def: 'to be good'
 	},
-	{
+/* 	{
 		hangul: '싫다',
 		romaji: 'silta',
 		def: 'to be bad'
-	},
+	}, */
 	{
 		hangul: '덥다',
 		romaji: 'deopda',
@@ -119,6 +124,7 @@ const primaryVocab = [
 		romaji: 'haengboghada',
 		def: 'to be happy'
 	},
+	/*
 	{
 		hangul: '슬프다',
 		romaji: 'seulpeuda',
@@ -134,7 +140,7 @@ const primaryVocab = [
 		romaji: 'pigonhada',
 		def: 'to be tired'
 	},
-/* 	{
+ 	{
 		hangul: '재미있다',
 		romaji: 'jaemiitda',
 		def: 'to be interesting'
@@ -158,7 +164,7 @@ const primaryVocab = [
 		hangul: '더럽다',
 		romaji: 'deoreopda',
 		def: 'to be dirty'
-	}, */
+	}, 
 	{
 		hangul: '빠르다',
 		romaji: 'ppareuda',
@@ -168,7 +174,7 @@ const primaryVocab = [
 		hangul: '느리다',
 		romaji: 'neurida',
 		def: 'to be slow'
-	},
+	},*/
 	{
 		hangul: '예쁘다',
 		romaji: 'yeppeuda',
@@ -178,6 +184,11 @@ const primaryVocab = [
 		hangul: '똑똑하다',
 		romaji: 'ttokttokhada',
 		def: 'to be smart'
+	},
+	{
+		hangul: '일하다',
+		romaji: 'ilhada',
+		def: 'to work'
 	},
 	{
 		hangul: '사다',
@@ -199,7 +210,7 @@ const primaryVocab = [
 		romaji: 'salanghada',
 		def: 'to love'
 	},
-	{
+/* 	{
 		hangul: '놀다',
 		romaji: 'nolda',
 		def: 'to play'
@@ -208,7 +219,7 @@ const primaryVocab = [
 		hangul: '만들다',
 		romaji: 'mandeulda',
 		def: 'to make'
-	},
+	}, */
 	{
 		hangul: '작다',
 		romaji: 'jagda',
@@ -222,6 +233,11 @@ const primaryVocab = [
 ];
 
 const nounVocab = [
+	{
+		hangul: '지금',
+		romaji: 'jigeum',
+		def: 'now'
+	},
 	{
 		hangul: '오늘',
 		romaji: 'oneul',
@@ -248,6 +264,16 @@ const nounVocab = [
 		def: 'there'
 	},
 	{
+		hangul: '이',
+		romaji: 'i',
+		def: 'this (add 것 to mean this is)'
+	},
+	{
+		hangul: '그',
+		romaji: 'geu',
+		def: 'that (add 것 to mean that is)'
+	},
+	{
 		hangul: '날씨',
 		romaji: 'nalssi',
 		def: 'weather'
@@ -258,14 +284,39 @@ const nounVocab = [
 		def: 'book'
 	},
 	{
+		hangul: '영화',
+		romaji: 'yeonghwa',
+		def: 'movie'
+	},
+	{
+		hangul: '음악',
+		romaji: 'eumag',
+		def: 'music'
+	},
+	{
 		hangul: '자동차',
 		romaji: 'jadongcha',
 		def: 'car'
-	},	
+	},
+	{
+		hangul: '돈',
+		romaji: 'don',
+		def: 'money'
+	},
+	{
+		hangul: '집',
+		romaji: 'jib',
+		def: 'house'
+	},
+	{
+		hangul: '친구',
+		romaji: 'chingu',
+		def: 'friend'
+	},
 	{ hangul: '몸', romaji: 'mom', def: 'body' },
 	{ hangul: '배', romaji: 'bae', def: 'stomach' },
-	{ hangul: '등', romaji: 'deung', def: 'back' },
-	{ hangul: '가슴', romaji: 'gaseum', def: 'chest' },
+	// { hangul: '등', romaji: 'deung', def: 'back' },
+	// { hangul: '가슴', romaji: 'gaseum', def: 'chest' },
 	{ hangul: '이름', romaji: 'ileum', def: 'name' },
 	{ hangul: '도시', romaji: 'dosi', def: 'city' },
 	{ hangul: '셔츠', romaji: 'syeocheu', def: 'shirt' },
@@ -279,25 +330,37 @@ const miscVocab = [
 	{ hangul: '자주', romaji: 'jaju', def: 'frequently' },
 	{ hangul: '정말', romaji: 'jeongmal', def: 'really' },
 	{ hangul: '조금', romaji: 'jogeum', def: 'a little' },
+	{ hangul: '더', romaji: 'deo', def: 'more' },
 /* 	{ hangul: '꽤', romaji: 'kkwae', def: 'quite' },
 	{ hangul: '상당히', romaji: 'sangdanghi', def: 'quite' }, */
-	{ hangul: '거의', romaji: 'geoui', def: 'almost' },
+	// { hangul: '거의', romaji: 'geoui', def: 'almost' },
 	{ hangul: '빨리', romaji: 'ppalli', def: 'fast' },
 	{ hangul: '천천히', romaji: 'cheoncheonhi', def: 'slowly' },
-	{ hangul: '신중하게', romaji: 'sinjunghage', def: 'carefully' },
+	// { hangul: '신중하게', romaji: 'sinjunghage', def: 'carefully' },
 	{ hangul: '항상', romaji: 'hangsang', def: 'always' },
 	// { hangul: '늘', romaji: 'neul', def: 'always' },
-	{ hangul: '보통', romaji: 'botong', def: 'usually' },
-	{ hangul: '때로는', romaji: 'ttaeroneun', def: 'sometimes' },
+	// { hangul: '보통', romaji: 'botong', def: 'usually' },
+	// { hangul: '때로는', romaji: 'ttaeroneun', def: 'sometimes' },
 	// { hangul: '가끔', romaji: 'gakkeum', def: 'occasionally' },
 /* 	{ hangul: '좀처럼', romaji: 'jomcheoreom', def: 'seldom' },
 	{ hangul: '드물게', romaji: 'deumulge', def: 'rarely' }, */
-	{ hangul: '절대', romaji: 'jeoldae', def: 'never' },
+	// { hangul: '절대', romaji: 'jeoldae', def: 'never' },
+	{ hangul: '고마워요', romaji: 'gomawoyo', def: 'thanks' },
 	{ hangul: '만나서 반가워요', romaji: 'Mannaseo bangawoeyo', def: 'nice to meet you' },
 	{ hangul: '어떻게 지내세요?', romaji: 'Eotteoke jinaeseyo? ', def: 'how are you?' },
 	{ hangul: '잘 지내요 ', romaji: 'Jal jinaeyo', def: "im great" },
 	{ hangul: '저는 커피를 마시어요', romaji: 'naneun keopileul masieoyo', def: 'i drink coffee' },
-	{ hangul: '나는 여기에 자주 오요', romaji: 'naneun yeogie jaju oyo', def: 'i come here often' }
+	{ hangul: '나는 여기에 자주 오요', romaji: 'naneun yeogie jaju oyo', def: 'i come here often' },
+	// i want to take a shower
+	// i work today
+	// my name is...
+]
+
+const importantConcepts = [
+	{ hangul: '고 싶다', romaji: 'conjugated verb + go sipda(conjugate this part, go sipoyo)', def: 'expresses the idea of wanting to do a particular action' }
+	//add also particle
+	// add but concept
+	// concept about going to places
 ]
 
 const vocab = [...primaryVocab,...nounVocab,...miscVocab]
@@ -314,7 +377,7 @@ const MODE_TYPES = {
 let curIndex = randomInteger(0, vocab.length - 1);
 let mode = MODE_TYPES.ASK_KOREAN;
 let allAnswered = false;
-let showRomaji = true;
+let showRomaji = false;
 
 function sortVocab() {
 	vocab.sort(() => Math.random() - 0.5);
